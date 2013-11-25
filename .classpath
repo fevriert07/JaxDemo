@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="jaxdemo/config/" kind="src" path="src"/>
+	<classpathentry excluding="jaxdemo/config/|jax/java/jaxdemo/config/" kind="src" path="src"/>
 	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/disruptor-2.10.4.jar" sourcepath="lib/disruptor-2.10.4-sources.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/JaxDemo/lib/disruptor-2.10.4-javadoc.jar!/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="lib/joda-time-2.3.jar" sourcepath="lib/joda-time-2.3-sources.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/JaxDemo/lib/joda-time-2.3-javadoc.jar!/"/>
@@ -25,7 +20,6 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/JaxDemo/lib/log4j-core-2.0-beta9-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/jaxdemo/config"/>
-	<classpathentry kind="lib" path="lib/activemq-all-5.9.0.jar"/>
+	<classpathentry kind="lib" path="src/jax/java/jaxdemo/config"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
