@@ -1,7 +1,5 @@
 package jax.java.jaxdemo.eventbus;
 
-import java.util.concurrent.Executors;
-
 import jax.java.jaxdemo.eventhandler.QueryEventHandler;
 import jax.java.jaxdemo.eventhandler.UploadDataEventHandler;
 import jax.java.jaxdemo.events.PersonRecordEvent;
@@ -9,7 +7,6 @@ import jax.java.jaxdemo.events.QueryDataEvent;
 import jax.java.jaxdemo.events.UploadDataEvent;
 import jax.java.jaxdemo.view.PersonRecordView;
 
-import com.google.common.eventbus.AsyncEventBus;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 
@@ -21,7 +18,7 @@ public class EventBusAssembly {
 	private QueryEventHandler queryEventHandler;
 
 	public EventBusAssembly() throws Exception {
-		this.eventBus = new AsyncEventBus(Executors.newFixedThreadPool(1));
+		this.eventBus = new EventBus(); //new AsyncEventBus(Executors.newFixedThreadPool(1));
 		eventBus.register(this);		
 		personRecordView = new PersonRecordView();
 		uploadDataEventHandler = new UploadDataEventHandler(eventBus);

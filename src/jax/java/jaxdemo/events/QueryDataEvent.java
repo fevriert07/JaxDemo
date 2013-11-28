@@ -7,6 +7,18 @@ public class QueryDataEvent {
 	private DateTime queryDate;
 	private String querySsn;
 
+	public QueryDataEvent(){
+		this(null, null);
+	}
+	
+	public QueryDataEvent(DateTime queryDate){
+		this(queryDate, null);
+	}
+	
+	public QueryDataEvent( String querySsn){
+		this(null, querySsn);
+	}
+	
 	public QueryDataEvent(DateTime queryDate, String querySsn) {
 
 		this.queryStartTime = System.currentTimeMillis();

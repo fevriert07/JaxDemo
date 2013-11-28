@@ -5,11 +5,6 @@
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/joda-time-2.3.jar" sourcepath="lib/joda-time-2.3-sources.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/JaxDemo/lib/joda-time-2.3-javadoc.jar!/"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="lib/guava-15.0.jar"/>
 	<classpathentry kind="lib" path="lib/log4j-api-2.0-beta9.jar" sourcepath="lib/log4j-core-2.0-beta9-sources.jar">
 		<attributes>
@@ -22,5 +17,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="src/jax/java/jaxdemo/config"/>
+	<classpathentry kind="lib" path="lib/joda-time-2.3.jar" sourcepath="lib/joda-time-2.3-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/JaxDemo/lib/joda-time-2.3-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/joda-convert-1.5.jar"/>
+	<classpathentry kind="lib" path="lib/nscala-time_2.10-0.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

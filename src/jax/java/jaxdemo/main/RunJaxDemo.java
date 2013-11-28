@@ -30,7 +30,6 @@ public class RunJaxDemo {
 			System.out.println("1: Query all dates in 1990");
 			System.out.println("2 <SSN>: Query by SSN");
 			System.out.println("3 <YYYY-MM-DD>: Query by Date");
-			System.out.println("C: Combo insert, update and query");
 
 			System.out.print("Choose --->");
 			String choice = bufReader.readLine().toUpperCase();
@@ -40,32 +39,28 @@ public class RunJaxDemo {
 			} else if ("U".equals(choice)) {
 				eventBus.post(new UploadDataEvent("updateDataFile"));
 			} else if ("0".equals(choice)) {
-				eventBus.post(new QueryDataEvent(null, null));
+				eventBus.post(new QueryDataEvent());
 			} else if ("1".equals(choice)) {
 				queryDateRange(eventBus);
 			} else if (choice.startsWith("2")) {
 				try {
 					String querySsn = choice.split("\\s")[1].trim();
-					eventBus.post(new QueryDataEvent(null, querySsn));
+					eventBus.post(new QueryDataEvent(querySsn));
 				} catch (Exception e) {
 					System.out.println("SSN required for query");
 				}
 			} else if (choice.startsWith("3")) {
 				try {
 					DateTime queryDate = DateTime.parse(choice.split("\\s")[1].trim());
-					eventBus.post(new QueryDataEvent(queryDate, null));
+					eventBus.post(new QueryDataEvent(queryDate));
 				} catch (Exception e) {
 					System.out.println("Date required for query");
 				}
 			}
-			else if ("C".equals(choice)) {
-				eventBus.post(new UploadDataEvent("insertDataFile"));
-				eventBus.post(new UploadDataEvent("updateDataFile"));
-				queryDateRange(eventBus);
-				queryDateRange(eventBus);
-				eventBus.post(new QueryDataEvent(null, null));
-				
-			} 
+			else{
+				System.out.println("Invalid Choice - try again");
+			}
+			
 
 		}
 
