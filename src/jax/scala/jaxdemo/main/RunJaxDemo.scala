@@ -1,19 +1,15 @@
 package jax.scala.jaxdemo.main
 
 import jax.scala.jaxdemo.eventbus.EventBusAssembly
-import com.github.nscala_time.time.Imports._
 import org.joda.time.DateTime
 import jax.scala.jaxdemo.events.UploadDataEvent
 import jax.scala.jaxdemo.events.QueryDataEvent
 
-
 object RunJaxDemo {
-
-  val eventBus = new EventBusAssembly().eventBus
+  val eventBus = new EventBusAssembly().eventBus  
   
   def main(args: Array[String]) {
     eventBus.post(new UploadDataEvent("insertDataFile"))
-
     
     val ssnChoicePattern = "2 (\\d{3}-\\d{2}-\\d{4})".r
     val dateChoicePattern = "3 (\\d{4}-\\d{2}-\\d{2})".r
